@@ -2,10 +2,10 @@ body
 {
 	font-size: 16px;
 	line-height: 1.5;
-	// color: $black;
+	color: $black;
 }
 
-// a { color: $black; }
+a { color: $black; }
 
 ul
 {
@@ -26,7 +26,7 @@ h1
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 25px;
-	// color: $black;
+	color: $black;
 	margin-top: 0;
 	margin-bottom: 21px;
 
@@ -43,7 +43,7 @@ h2
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 25px;
-	// color: $black;
+	color: $black;
 	margin-top: 0;
 	margin-bottom: 18px;
 
@@ -73,7 +73,7 @@ h4
 p
 {
 	margin-top: 0;
-	// color: $black;
+	color: $black;
 }
 
 b { font-weight: 700; }

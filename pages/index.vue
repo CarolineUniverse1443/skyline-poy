@@ -11,6 +11,6 @@
 .main-page
 {
     margin-bottom: 64px;
-    @include mq($tablet) { padding: 0 80px; }
+    // @include mq($tablet) { padding: 0 80px; }
 }
 </style>
