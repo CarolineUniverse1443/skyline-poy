@@ -1,0 +1,23 @@
+*, *::after, *::before
+{
+	// font-family: $main-font;
+	scroll-behavior: smooth;
+}
+
+body
+{
+	min-width: 375px;
+	min-height: 100vh;
+	// background-color: $main-color;
+}
+
+// .default-container
+// {
+// 	max-width: 1680px;
+// 	width: 100%;
+// 	margin: 0 auto;
+// 	padding: 0 16px;
+
+// 	@include mq($tablet) { padding: 0 20px; }
+// 	@include mq($desktop) { padding: 0 30px; }
+// }
