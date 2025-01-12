@@ -1,11 +1,17 @@
 // Шрифты
-// $main-font: 'Helvetica Neue Cyr', sans-serif;
+$main-font: 'Inter', sans-serif;
 
 // Основные цвета
-// $main-color: #F0622C;
-// $accent-color: #FAF6F5;
-$black: #000000;
-$white: #FFFFFF;
+$main-color  : #F7F8FA;
+$accent-color: #D1F95D;
+$danger-color: #F26060;
+$white       : #FFFFFF;
+$grey-100    : #F7F9FA;
+$grey-200    : #D2D2D2;
+$grey-300    : #CCCDCE;
+$grey-400    : #BFC0C1;
+$grey-500    : #B8B9BA;
+$black       : #1E1E1E;
 
 // Разрешения
 $tablet : 768px;
