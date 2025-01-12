@@ -35,6 +35,13 @@
 	display: flex;
 	justify-content: space-between;
 	padding-block: 20px;
+	margin-bottom: 5px;
+
+	@include mq($desktop)
+	{
+		padding-block: 40px;
+		margin-bottom: 0;
+	}
 }
 
 .header__button
@@ -45,10 +52,7 @@
 	border: 1px solid $grey-200;
 	height: 40px;
 
-	@include mq($desktop)
-	{
-		height: 60px;
-	}
+	@include mq($desktop) { height: 60px; }
 }
 
 .header__down-arrow

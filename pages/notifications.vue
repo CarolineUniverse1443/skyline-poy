@@ -2,8 +2,8 @@
 </script>
 
 <template>
-	<div class="main-page">
-		<p>Profile</p>
+	<div class="notifications">
+		<p>Notificatons</p>
 	</div>
 </template>
 

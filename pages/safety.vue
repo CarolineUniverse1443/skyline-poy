@@ -2,8 +2,8 @@
 </script>
 
 <template>
-	<div class="main-page">
-		<p>Profile</p>
+	<div class="safety">
+		<p>Safety</p>
 	</div>
 </template>
 
