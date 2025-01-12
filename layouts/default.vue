@@ -3,7 +3,7 @@
 
 <template>
 	<div class="container">
-		<!-- <HeaderSection /> -->
+		<HeaderSection />
 		<main>
 			<slot />
 		</main>
