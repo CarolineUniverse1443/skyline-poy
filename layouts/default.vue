@@ -40,6 +40,7 @@
 	width: 100%;
 	border-radius: 5px;
 	padding: 15px 10px;
+	margin-bottom: 20px;
 
 	@include mq($tablet) { padding: 20px; }
 	@include mq($desktop) { padding: 0; }
