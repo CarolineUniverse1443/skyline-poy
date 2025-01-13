@@ -41,21 +41,26 @@
 						<IconsEditPencil />
 					</button>
 				</div>
-				<div class="profile__section-block">
-					<h4 class="profile__section-subtitle">Имя</h4>
-					<p class="profile__section-text">Андрей</p>	
+
+				<div class="profile__section-block-wr">
+					<div class="profile__section-block">
+						<h4 class="profile__section-subtitle">Имя</h4>
+						<p class="profile__section-text">Андрей</p>	
+					</div>
+					<div class="profile__section-block">
+						<h4 class="profile__section-subtitle">Фамилия</h4>
+						<p class="profile__section-text">Смит</p>	
+					</div>
 				</div>
-				<div class="profile__section-block">
-					<h4 class="profile__section-subtitle">Фамилия</h4>
-					<p class="profile__section-text">Смит</p>	
-				</div>
-				<div class="profile__section-block">
-					<h4 class="profile__section-subtitle">Дата рождения</h4>
-					<p class="profile__section-text">06.04.1980</p>	
-				</div>
-				<div class="profile__section-block">
-					<h4 class="profile__section-subtitle">Контактная информация</h4>
-					<p class="profile__section-text">Example@gmail.com</p>	
+				<div class="profile__section-block-wr">
+					<div class="profile__section-block">
+						<h4 class="profile__section-subtitle">Дата рождения</h4>
+						<p class="profile__section-text">06.04.1980</p>	
+					</div>
+					<div class="profile__section-block">
+						<h4 class="profile__section-subtitle">Контактная информация</h4>
+						<p class="profile__section-text">Example@gmail.com</p>	
+					</div>
 				</div>
 			</section>
 
@@ -66,17 +71,22 @@
 						<IconsEditPencil />
 					</button>
 				</div>
-				<div class="profile__section-block">
-					<h4 class="profile__section-subtitle">Страна</h4>
-					<p class="profile__section-text">Россия</p>	
+
+				<div class="profile__section-block-wr">
+					<div class="profile__section-block">
+						<h4 class="profile__section-subtitle">Страна</h4>
+						<p class="profile__section-text">Россия</p>	
+					</div>
+					<div class="profile__section-block">
+						<h4 class="profile__section-subtitle">Город</h4>
+						<p class="profile__section-text">Владикавказ</p>	
+					</div>
 				</div>
-				<div class="profile__section-block">
-					<h4 class="profile__section-subtitle">Город</h4>
-					<p class="profile__section-text">Владикавказ</p>	
-				</div>
-				<div class="profile__section-block">
-					<h4 class="profile__section-subtitle">Улица</h4>
-					<p class="profile__section-text">Проспект Мира 1</p>	
+				<div class="profile__section-block-wr">
+					<div class="profile__section-block">
+						<h4 class="profile__section-subtitle">Улица</h4>
+						<p class="profile__section-text">Проспект Мира 1</p>	
+					</div>
 				</div>
 			</section>
 		</div>
@@ -108,6 +118,12 @@
 	line-height: 18px;
 	font-weight: 400;
 	margin-bottom: 0;
+
+	@include mq($desktop)
+	{
+		font-size: 20px;
+		line-height: 24px;
+	}
 }
 
 .profile__content
@@ -126,7 +142,22 @@
 	flex-direction: column;
 	gap: 15px;
 
-	&--kyc { gap: 10px; }
+	&--kyc
+	{
+		gap: 10px;
+
+		@include mq($desktop)
+		{
+			.profile__section-heading { align-items: start; }
+		}
+	}
+
+	@include mq($desktop)
+	{
+		padding: 20px;
+		gap: 20px;
+		&--kyc { gap: 10px; }
+	}
 }
 
 .profile__section-heading
@@ -136,11 +167,36 @@
 	justify-content: space-between;
 }
 
+.profile__section-block-wr
+{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	@include mq($desktop)
+	{
+		flex-direction: row;
+		gap: 373px;
+		max-width: 685px;
+	}
+}
+
+.profile__section-block
+{
+	min-width: 127px;
+}
+
 .profile__section-title
 {
 	font-size: 18px;
 	line-height: 22px;
 	margin: 0;
+
+	@include mq($desktop)
+	{
+		font-size: 20px;
+		line-height: 24px;
+	}
 }
 
 .profile__section-subtitle
@@ -172,12 +228,24 @@
 	height: 45px;
 	border-radius: 50%;
 	background: $accent-color;
+
+	@include mq($desktop)
+	{
+		width: 60px;
+		height: 60px;
+	}
 }
 
 .profile__person-name
 {
 	font-size: 15px;
 	line-height: 18px;
+
+	@include mq($desktop)
+	{
+		font-size: 20px;
+		line-height: 24px;
+	}
 }
 
 .profile__edit-button

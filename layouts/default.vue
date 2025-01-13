@@ -27,10 +27,11 @@
 	@include mq($desktop)
 	{
 		flex-direction: row;
-		gap: 33px;
+		gap: 15px;
 		background-color: $main-color;
 		border-radius: 10px;
 		padding: 20px;
+		margin-bottom: 80px;
 	}
 }
 
@@ -43,6 +44,10 @@
 	margin-bottom: 20px;
 
 	@include mq($tablet) { padding: 20px; }
-	@include mq($desktop) { padding: 0; }
+	@include mq($desktop)
+	{
+		padding: 0;
+		margin-bottom: 0;
+	}
 }
 </style>
