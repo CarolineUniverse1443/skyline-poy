@@ -16,6 +16,7 @@
 						<span class="profile__person-name">Andrew Smith</span>
 					</div>
 					<button class="profile__edit-button">
+						<p class="profile__edit-button-text">Редактировать</p>
 						<IconsEditPencil />
 					</button>
 				</div>
@@ -38,6 +39,7 @@
 				<div class="profile__section-heading">
 					<h3 class="profile__section-title">Личные данные</h3>
 					<button class="profile__edit-button">
+						<p class="profile__edit-button-text">Редактировать</p>
 						<IconsEditPencil />
 					</button>
 				</div>
@@ -68,6 +70,7 @@
 				<div class="profile__section-heading">
 					<h3 class="profile__section-title">Адрес проживания</h3>
 					<button class="profile__edit-button">
+						<p class="profile__edit-button-text">Редактировать</p>
 						<IconsEditPencil />
 					</button>
 				</div>
@@ -254,8 +257,27 @@
 	justify-content: center;
 	align-items: center;
 	padding: 10px;
+	font-size: 15px;
+	line-height: 18px;
 	border: 1px solid $grey-200;
 	border-radius: 50%;
+
+	@include mq($desktop)
+	{
+		gap: 10px;
+		padding: 10px 20px;
+		border-radius: 100px;
+	}
+}
+
+.profile__edit-button-text
+{
+	display: none;
+
+	@include mq($desktop)
+	{
+		display: block;
+	}
 }
 
 .profile__verify-button
@@ -274,7 +296,7 @@
 
 	&:hover
 	{
-		background-color: $white;
+		background-color: $grey-200;
 		color: $black;
 	}
 }
