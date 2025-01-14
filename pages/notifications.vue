@@ -1,4 +1,87 @@
 <script setup>
+// data
+const switches = ref([
+	{
+		idx: 0,
+		title: 'Вход в аккаунт',
+		checked: false,
+		type: 'action',
+	},
+	{
+		idx: 1,
+		title: 'Пополнение баланса',
+		checked: false,
+		type: 'action',
+	},
+	{
+		idx: 2,
+		title: 'Платежи',
+		checked: false,
+		type: 'action',
+	},
+	{
+		idx: 3,
+		title: 'Перевод',
+		checked: false,
+		type: 'action',
+	},
+	{
+		idx: 4,
+		title: 'Вывод',
+		checked: false,
+		type: 'action',
+	},
+	{
+		idx: 5,
+		title: 'Оплата услуг',
+		checked: false,
+		type: 'action',
+	},
+	{
+		idx: 6,
+		title: 'SMS',
+		checked: false,
+		type: 'method',
+	},
+	{
+		idx: 7,
+		title: 'Email',
+		checked: false,
+		type: 'method',
+	},
+	{
+		idx: 8,
+		title: 'Push-уведомления',	
+		checked: false,
+		type: 'method',
+	},
+]);
+
+const notificationsActions = switches.value.filter(item => item.type === 'action');
+const notificationsMethods = switches.value.filter(item => item.type === 'method');
+
+// methods
+const getSavedSwitchStatuses = (switches) =>
+{
+	switches.forEach(el =>
+	{
+		const switchStatus = localStorage.getItem('switch' + el.idx);
+		if (switchStatus !== null)
+			el.checked = !!switchStatus;
+	});
+};
+
+const changeSwitchChecked = (idx) =>
+{
+	switches.value[idx].checked = !switches.value[idx].checked;
+	localStorage.setItem('switch' + idx, switches.value[idx].checked);
+};
+
+// mounted
+onMounted(() =>
+{
+	getSavedSwitchStatuses(switches.value);
+});
 </script>
 
 <template>
@@ -13,8 +96,12 @@
 				<h3 class="notifications__section-title">Тип уведомлений</h3>
 				<div class="notifications__switches">
 					<UiSwitch
-						v-for="i in 6"
-						:key="i"
+						v-for="item in notificationsActions"
+						:key="item.idx"
+						:idx="item.idx"
+						:title="item.title"
+						:checked="item.checked"
+						@change="changeSwitchChecked"
 					/>
 				</div>
 			</section>
@@ -23,8 +110,12 @@
 				<h3 class="notifications__section-title">Способы получения уведомлений</h3>
 				<div class="notifications__switches">
 					<UiSwitch
-						v-for="i in 3"
-						:key="i"
+						v-for="item in notificationsMethods"
+						:key="item.idx"
+						:idx="item.idx"
+						:title="item.title"
+						:checked="item.checked"
+						@change="changeSwitchChecked"
 					/>
 				</div>
 			</section>

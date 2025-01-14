@@ -1,19 +1,42 @@
 <script setup>
+// props
+const props = defineProps({
+	idx: { type: Number, default: 0 },
+	title: { type: String, default: 'Вход в аккаунт' },
+	checked: { type: Boolean, default: false },
+});
+
+// computed
+const switchStatus = computed(() => props.checked ? 'Включено' : 'Отключено');
+
+// emits
+const emit = defineEmits(['change']);
+
+// methods
+const changeChecked = () => emit('change', props.idx);
 </script>
 
 <template>
 	<div class="ui-switch">
-		<p class="ui-switch__title">Вход в аккаунт</p>
+		<p class="ui-switch__title">
+			{{ title }}
+		</p>
 		<div class="ui-switch__container">
-			<p class="ui-switch__status">Отключено</p>
+			<p class="ui-switch__status">
+				{{ switchStatus }}
+			</p>
 			<label class="ui-switch__label">
-				<input type="checkbox" class="ui-switch__input sr-only peer">
+				<input
+					type="checkbox"
+					:checked="checked"
+					class="ui-switch__input"
+					@change="changeChecked"
+				>
 				<div class="ui-switch__toggle"></div>
 			</label>
 		</div>
 	</div>
 </template>
-
 
 <style lang="scss">
 .ui-switch
@@ -39,6 +62,7 @@
 	padding: 10px 20px;
 	border: 1px solid $grey-200;
 	border-radius: 100px;
+	@include mq($desktop) { width: 190px; }
 }
 
 .ui-switch__label
