@@ -286,7 +286,7 @@
 	justify-content: center;
 	align-items: center;
 	padding: 13.5px 10px;
-	border: none;
+	border: 1px solid $black;
 	border-radius: 10px;
 	background-color: $black;
 	color: $white;
@@ -296,7 +296,8 @@
 
 	&:hover
 	{
-		background-color: $grey-200;
+		background-color: $white;
+		border: 1px solid $grey-200;
 		color: $black;
 	}
 }

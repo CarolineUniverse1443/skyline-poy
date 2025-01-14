@@ -67,14 +67,14 @@ const getSavedSwitchStatuses = (switches) =>
 	{
 		const switchStatus = localStorage.getItem('switch' + el.idx);
 		if (switchStatus !== null)
-			el.checked = !!switchStatus;
+			el.checked = Boolean(+switchStatus);
 	});
 };
 
 const changeSwitchChecked = (idx) =>
 {
 	switches.value[idx].checked = !switches.value[idx].checked;
-	localStorage.setItem('switch' + idx, switches.value[idx].checked);
+	localStorage.setItem('switch' + idx, +switches.value[idx].checked);
 };
 
 // mounted
