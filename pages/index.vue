@@ -3,10 +3,7 @@
 
 <template>
 	<div class="profile">
-		<div class="profile__header">
-			<div class="profile__header-point"></div>
-			<h2 class="profile__header-title">Мой профиль</h2>
-		</div>
+		<ContentHeading title="Мой профиль"/>
 
 		<div class="profile__content">
 			<section class="profile__section">
@@ -97,38 +94,6 @@
 </template>
 
 <style lang="scss">
-.profile__header
-{
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	border-bottom: 1px solid $grey-300;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-}
-
-.profile__header-point
-{
-	width: 20px;
-	height: 20px;
-	background-color: $accent-color;
-	border-radius: 50%;
-}
-
-.profile__header-title
-{
-	font-size: 15px;
-	line-height: 18px;
-	font-weight: 400;
-	margin-bottom: 0;
-
-	@include mq($desktop)
-	{
-		font-size: 20px;
-		line-height: 24px;
-	}
-}
-
 .profile__content
 {
 	display: flex;

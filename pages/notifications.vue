@@ -86,10 +86,7 @@ onMounted(() =>
 
 <template>
 	<div class="notifications">
-		<div class="notifications__header">
-			<div class="notifications__header-point"></div>
-			<h2 class="notifications__header-title">Уведомления</h2>
-		</div>
+		<ContentHeading title="Уведомления"/>
 		
 		<div class="notifications__content">
 			<section class="notifications__section">
@@ -124,38 +121,6 @@ onMounted(() =>
 </template>
 
 <style lang="scss">
-.notifications__header
-{
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	border-bottom: 1px solid $grey-300;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-}
-
-.notifications__header-point
-{
-	width: 20px;
-	height: 20px;
-	background-color: $accent-color;
-	border-radius: 50%;
-}
-
-.notifications__header-title
-{
-	font-size: 15px;
-	line-height: 18px;
-	font-weight: 400;
-	margin-bottom: 0;
-
-	@include mq($desktop)
-	{
-		font-size: 20px;
-		line-height: 24px;
-	}
-}
-
 .notifications__content
 {
 	display: flex;
